@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - SAHub</title>
+  <style>
+   body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+    header, footer {
+      background-color: #222;
+      color: white;
+      padding: 20px 40px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #81c784;
+    }
+
+    #title {
+      color: white;
+      text-decoration: none;
+    }
+
+    .container {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+    h2 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 25px;
+      font-size: 26px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #66bb6a;
+      outline: none;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #256729;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 14px;
+    }
+
+    .signup-link a {
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 40px 20px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        padding-top: 10px;
+      }
+    }
+    main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="home_pege.html"><h1 id="title">SAHub</h1></a>
+    <nav>
+      <a href="home_pege.html">Home</a>
+      <a href="About_page.html">About</a>
+      <a href="Courses_page.html">Courses</a>
+      <a href="Instructors_page.html">Instructors</a>
+      <a href="Nutrion_Page.html">Nutrition</a>
+      <a href="Blog_page.html">Blog</a>
+      <a href="Contact_page.html">Contact</a>
+      <a href="Login_page.html">Login</a>
+    </nav>
+  </header>
+
+<main>
+  <div class="container">
+    <h2>Login to Your Account</h2>
+    <form id="loginForm">
+      <label for="username">Username or Email:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Login</button>
+    </form>
+    <div class="signup-link">
+      Don't have an account? <a href="Register_page.html">Sign up here</a>
+    </div>
+  </div>
+</main>  
+  <footer>
+    <p>&copy; 2025 SAHub | <a href="PrivacyPolicy_page.html" style="color: white;">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      const storedUser = JSON.parse(localStorage.getItem("user"));
+
+      if (!storedUser) {
+        alert("No user registered yet! Please sign up first.");
+        return;
+      }
+
+      if (username === storedUser.username && password === storedUser.password) {
+        alert("Login successful!");
+        window.location.href = "User_Dashboard.html";
+      } else {
+        alert("Invalid username or password.");
+      }
+    });
+  </script>
+</body>
+</html>

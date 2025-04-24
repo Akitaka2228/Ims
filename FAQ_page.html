@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ - SAHub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    header, footer {
+      background: #222;
+      color: white;
+      padding: 20px 40px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    #title {
+      color: white;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 40px 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      color: #2e7d32;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .faq-item {
+      background: #f4f4f4;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: background 0.3s;
+    }
+
+    .faq-item h3 {
+      cursor: pointer;
+      margin: 0;
+      color: #2e7d32;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+      margin-top: 10px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .arrow {
+      transform: rotate(90deg);
+    }
+
+    a {
+      color: #28a745;
+    }
+
+   
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="home_pege.html"><h1 id="title">SAHub</h1></a>
+    <nav>
+      <a href="home_pege.html">Home</a>
+      <a href="Dashboard_page.html">Dashboard</a>
+      <a href="Courses_page.html">Courses</a>
+      <a href="Profile_page.html">Profile</a>
+      <a href="Settings_page.html">Settings</a>
+      <a href="Login_page.html">Logout</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Frequently Asked Questions (FAQ)</h2>
+
+    <div class="faq-item">
+      <h3>1. How do I enroll in a course? <span class="arrow">▶</span></h3>
+      <div class="faq-answer">
+        <p>Go to the Courses page, select the course you're interested in, and click the “Enroll” button. You’ll be guided through the process step by step.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h3>2. Is there a fee for using SAHub? <span class="arrow">▶</span></h3>
+      <div class="faq-answer">
+        <p>SAHub offers both free and premium plans. You can access basic content for free, while premium features require a subscription starting at $4.99/month.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h3>3. Can I access the courses offline? <span class="arrow">▶</span></h3>
+      <div class="faq-answer">
+        <p>Courses are currently only available online. Offline support is planned in future updates.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h3>4. How do I update my profile information? <span class="arrow">▶</span></h3>
+      <div class="faq-answer">
+        <p>Go to your Profile page and click on “Edit Profile” to update your details. Changes take effect immediately.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h3>5. What if I forget my password? <span class="arrow">▶</span></h3>
+      <div class="faq-answer">
+        <p>Click “Forgot Password” on the login page, enter your email, and follow the instructions to reset it.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h3>6. Who can I contact for technical support? <span class="arrow">▶</span></h3>
+      <div class="faq-answer">
+        <p>Visit our <a href="Contact_page.html">Contact</a> page to reach our support team. We usually respond within 24 hours.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; <span id="year">2025</span> SAHub | <a href="PrivacyPolicy_page.html" style="color: white;">Privacy Policy & Terms</a></p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.querySelectorAll('.faq-item h3').forEach((question) => {
+      question.addEventListener('click', () => {
+        const parent = question.parentElement;
+        parent.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

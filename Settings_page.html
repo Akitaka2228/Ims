@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - SAHub</title>
+  <style>
+    footer { text-align: center; font-size: 14px; }
+    #title { color: white; text-decoration: none; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
+    header, footer { background: #222; color: white; padding: 20px 40px; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 { color: #2e7d32; margin-bottom: 20px; }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #256729;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="home_pege.html"><h1 id="title">SAHub</h1></a>
+    <nav>
+      <a href="home_pege.html">Home</a>
+      <a href="User_Dashboard.html">Dashboard</a>
+      <a href="Profile_page.html">Profile</a>
+      <a href="Settings_page.html">Settings</a>
+      <a href="Login_page.html">Logout</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Settings</h2>
+    <form>
+      <label for="language">Preferred Language:</label>
+      <select id="language">
+        <option>English</option>
+        <option>Melayu</option>
+      </select>
+
+      <label for="theme">Theme:</label>
+      <select id="theme">
+        <option>Light</option>
+        <option>Dark</option>
+      </select>
+
+      <label for="notifications">Email Notifications:</label>
+      <select id="notifications">
+        <option>Enabled</option>
+        <option>Disabled</option>
+      </select>
+
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 SAHub | <a href="PrivacyPolicy_page.html" style="color: white;">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>

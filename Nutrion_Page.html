@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nutrition & Meal Planning - SAHub</title>
+  <style>
+    #title {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 28px;
+    }
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f7f4;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header,
+footer {
+  background-color: #222;
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Header Title */
+#title {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+/* Navigation Styles */
+nav a {
+  color: white;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #66bb6a;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  font-size: 14px;
+  flex-direction: column;
+}
+
+/* Container for Main Content */
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(102, 187, 106, 0.2);
+}
+
+/* Heading */
+h1 {
+  color: #2e7d32;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+}
+
+/* Paragraph Styles */
+p {
+  line-height: 1.6;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+/* Hero Section Styles */
+.hero {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Button Styles */
+.button {
+  background-color: #28a745;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button:hover {
+  background-color: #219638;
+  box-shadow: 0 8px 18px rgba(33, 150, 56, 0.6);
+}
+
+/* Tip Box Styles */
+.tip {
+  background-color: #e8f5e9;
+  padding: 15px 20px;
+  border-left: 6px solid #66bb6a;
+  font-style: italic;
+  color: #2f6627;
+  max-width: 650px;
+  margin: 30px auto 0;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(102, 187, 106, 0.1);
+}
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <a href="home_pege.html" id="title">SAHub</a>
+    <nav>
+      <a href="home_pege.html">Home</a>
+      <a href="About_page.html">About</a>
+      <a href="Courses_page.html">Courses</a>
+      <a href="Instructors_page.html">Instructors</a>
+      <a href="Nutrion_Page.html">Nutrition</a>
+      <a href="Blog_page.html">Blog</a>
+      <a href="Contact_page.html">Contact</a>
+      <a href="Login_page.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+  <div class="container">
+    <h1>Nutrition & Meal Planning</h1>
+    <p>
+      At SAHub, we believe that proper nutrition is the foundation of a healthy and effective fitness journey.
+      Whether your goal is to build muscle, lose fat, or improve your performance, a tailored meal plan plays a critical role in helping you reach it.
+    </p>
+    <p>
+      This course offers basic guidance on macronutrient balance, hydration, meal timing, and food selection.
+      All information is easy to follow and designed for everyday athletes and fitness enthusiasts.
+    </p>
+    <p>
+      For more detailed, customized nutrition strategies and one-on-one planning, please reach out to our team.
+      We are happy to support you further during offline consultations.
+    </p>
+
+    <div class="tip">
+      💡 <strong>Tip:</strong> Consistency is key! Stick to your meal plan and hydrate well for the best results.
+    </div>
+
+    <div class="hero">
+      <button class="button" id="contactBtn">More Information? Call Us!</button>
+    </div>
+  </div>
+</main>
+  <footer>
+    <p>&copy; 2025 SAHub | <a href="PrivacyPolicy_page.html" style="color: white;">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('contactBtn').addEventListener('click', () => {
+      alert('Thank you for your interest! Please visit our Contact page or call +1-800-123-4567 for personalized support. 🍀');
+    });
+  </script>
+</body>
+</html>

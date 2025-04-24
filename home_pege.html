@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAHub (Sports And Health)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header, footer {
+      background: #222;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #title {
+      font-size: 26px;
+      font-weight: 700;
+      text-decoration: none;
+      color: white;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #66bb6a;
+    }
+
+    .hero {
+      background: url('home.jpg') center center / cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button {
+      background: #28a745;
+      color: white;
+      padding: 14px 28px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #219638;
+      box-shadow: 0 8px 18px rgba(33, 150, 56, 0.6);
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    .courses, .testimonials {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 25px;
+      width: 260px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      color: #28a745;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      padding: 30px 20px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="home_pege.html" id="title">SAHub</a>
+    <nav>
+      <a href="home_pege.html">Home</a>
+      <a href="About_page.html">About</a>
+      <a href="Courses_page.html">Courses</a>
+      <a href="Instructors_page.html">Instructors</a>
+      <a href="Nutrion_Page.html">Nutrition</a>
+      <a href="Blog_page.html">Blog</a>
+      <a href="Contact_page.html">Contact</a>
+      <a href="Login_page.html">Login</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <a class="button" href="Login_page.html">Get Started</a>
+  </div>
+
+  <div class="section">
+    <h2>Popular Fitness Courses</h2>
+    <a href="Courses_page.html" style="font-size: 16px; color: #28a745; text-decoration: none;">
+      View More →
+    </a>
+  </div>
+
+  <div class="courses">
+    <div class="card">
+      <h3>Strength Training 101</h3>
+      <p>Beginner | Build strength & learn key movements like squats & deadlifts</p>
+    </div>
+    <div class="card">
+      <h3>HIIT for Fat Burn</h3>
+      <p>All Levels | 20-minute sessions to torch fat & boost endurance</p>
+    </div>
+    <div class="card">
+      <h3>Bodyweight Mastery</h3>
+      <p>Intermediate | Progress to pull-ups, handstands & more without equipment</p>
+    </div>
+    <div class="card">
+      <h3>Post-Workout Recovery Flow</h3>
+      <p>All Levels | Stretch, foam roll, and recover smarter after workouts</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Why Choose Us?</h2>
+    <p>✓ Certified Trainers &nbsp;&nbsp; ✓ Personalized Plans &nbsp;&nbsp; ✓ Flexible Learning &nbsp;&nbsp; ✓ Supportive Community</p>
+  </div>
+
+  <div class="section">
+    <h2>What Our Learners Say</h2>
+    <div class="testimonials">
+      <div class="card">
+        <p>“This platform changed how I work out. I feel stronger and more confident!”</p>
+        <strong>- Sarah M.</strong>
+      </div>
+      <div class="card">
+        <p>“The trainers are amazing, and the programs are easy to follow.”</p>
+        <strong>- Liam D.</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Ready to start your fitness journey?</h2>
+    <a class="button" href="Contact_page.html">Join Now for Free</a>
+  </div>
+
+  <footer>
+    <p>&copy; <span id="year"></span> SAHub | <a href="PrivacyPolicy_page.html">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.querySelectorAll('.button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert('Thanks for clicking! Start your fitness journey today! 💪');
+      });
+    });
+
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      if (window.location.href.includes(link.getAttribute('href'))) {
+        link.style.textDecoration = 'underline';
+        link.style.fontWeight = 'bold';
+      }
+    });
+  </script>
+</body>
+</html>

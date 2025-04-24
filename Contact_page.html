@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - SAHub</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+    }
+
+    header, footer {
+      background: #222;
+      color: white;
+      padding: 20px 40px;
+    }
+
+    #title {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #2e7d32;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 10px 0 5px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input, textarea {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #66bb6a;
+      outline: none;
+      box-shadow: 0 0 5px rgba(102, 187, 106, 0.4);
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 14px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #256729;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="home_page.html"><h1 id="title">SAHub</h1></a>
+    <nav>
+      <a href="home_page.html">Home</a>
+      <a href="About_page.html">About</a>
+      <a href="Courses_page.html">Courses</a>
+      <a href="Instructors_page.html">Instructors</a>
+      <a href="Nutrition_Page.html">Nutrition</a>
+      <a href="Blog_page.html">Blog</a>
+      <a href="Contact_page.html">Contact</a>
+      <a href="Login_page.html">Login</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>If you have any questions, suggestions, or would like to collaborate with SAHub, feel free to get in touch using the form below!</p>
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 SAHub | <a href="#" style="color: white;">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you for contacting us! We'll get back to you soon 💌");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
+

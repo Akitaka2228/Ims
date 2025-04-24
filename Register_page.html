@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SAHub</title>
+  <style>
+    footer { text-align: center; font-size: 14px; }
+    #title { color: rgb(255, 255, 255); text-decoration: none; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background: #222; color: white; padding: 20px 40px; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; }
+
+    .container {
+      max-width: 450px;
+      margin: 60px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #2e7d32;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #256729;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .login-link a {
+      color: #2e7d32;
+      text-decoration: none;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="home_pege.html"><h1 id="title">SAHub</h1></a>
+    <nav>
+      <a href="home_pege.html">Home</a>
+      <a href="About_page.html">About</a>
+      <a href="Courses_page.html">Courses</a>
+      <a href="Instructors_page.html">Instructors</a>
+      <a href="Nutrion_Page.html">Nutrition</a>
+      <a href="Blog_page.html">Blog</a>
+      <a href="Contact_page.html">Contact</a>
+      <a href="Login_page.html">Login</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Create Your Account</h2>
+    <form id="registerForm">
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required>
+    
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    
+      <label for="newUsername">Username:</label>
+      <input type="text" id="newUsername" name="username" required>
+    
+      <label for="newPassword">Password:</label>
+      <input type="password" id="newPassword" name="password" required>
+    
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+    
+      <button type="submit">Register</button>
+    </form>
+    <div class="login-link">
+      Already have an account? <a href="Login_page.html">Login here</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 SAHub | <a href="#" style="color: white;">Privacy Policy</a></p>
+  </footer>
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      const username = document.getElementById("newUsername").value;
+      const password = document.getElementById("newPassword").value;
+  
+      localStorage.setItem("user", JSON.stringify({ username, password }));
+  
+      alert("Registration successful! Please login.");
+      window.location.href = "Login_page.html";
+    });
+  </script>
+</body>
+</html>

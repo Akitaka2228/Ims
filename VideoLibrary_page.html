@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Library - SAHub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    header, footer {
+      background: #222;
+      color: white;
+      padding: 20px 40px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    #title {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #2e7d32;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .filter-bar {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .filter-bar button {
+      background: #e0e0e0;
+      border: none;
+      padding: 10px 18px;
+      margin: 5px;
+      font-size: 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-bar button.active,
+    .filter-bar button:hover {
+      background: #2e7d32;
+      color: white;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .video-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      display: block;
+    }
+
+    .video-card h4 {
+      margin: 10px 15px 5px;
+      color: #2e7d32;
+      font-size: 18px;
+    }
+
+    .video-card p {
+      margin: 0 15px 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .fullscreen-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 6px 10px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="home_pege.html"><h1 id="title">SAHub</h1></a>
+    <nav>
+      <a href="home_pege.html">Home</a>
+      <a href="Courses_page.html">Courses</a>
+      <a href="VideoLibrary_page.html">Videos</a>
+      <a href="Profile_page.html">Profile</a>
+      <a href="Settings_page.html">Settings</a>
+      <a href="Login_page.html">Logout</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Video Library</h2>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="workout">Workout</button>
+      <button class="filter-btn" data-filter="nutrition">Nutrition</button>
+      <button class="filter-btn" data-filter="mind">Mental Health</button>
+    </div>
+
+    <div class="video-grid">
+      <div class="video-card" data-category="workout">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        <button class="fullscreen-btn" onclick="openFullscreen(this)">Fullscreen</button>
+        <h4>💪 Full Body Workout</h4>
+        <p>20-minute high-intensity session</p>
+      </div>
+
+      <div class="video-card" data-category="workout">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID4" allowfullscreen></iframe>
+        <button class="fullscreen-btn" onclick="openFullscreen(this)">Fullscreen</button>
+        <h4>🏋️ Strength Routine</h4>
+        <p>Upper body focus with dumbbells</p>
+      </div>
+
+      <div class="video-card" data-category="nutrition">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID3" allowfullscreen></iframe>
+        <button class="fullscreen-btn" onclick="openFullscreen(this)">Fullscreen</button>
+        <h4>🥗 Nutrition Tips</h4>
+        <p>Learn how to eat smart for your goals</p>
+      </div>
+
+      <div class="video-card" data-category="mind">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID5" allowfullscreen></iframe>
+        <button class="fullscreen-btn" onclick="openFullscreen(this)">Fullscreen</button>
+        <h4>🧠 Mindfulness for Focus</h4>
+        <p>Train your mind to stay calm</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; <span id="year">2025</span> SAHub | <a href="PrivacyPolicy_page.html" style="color: white;">Privacy Policy & Terms</a></p>
+  </footer>
+
+  <script>
+    // 动态年份
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // 分类过滤
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".video-card");
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelector(".filter-btn.active").classList.remove("active");
+        btn.classList.add("active");
+        const category = btn.dataset.filter;
+
+        cards.forEach(card => {
+          if (category === "all" || card.dataset.category === category) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+
+    // 全屏播放功能
+    function openFullscreen(btn) {
+      const iframe = btn.previousElementSibling;
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen();
+      }
+    }
+  </script>
+
+</body>
+</html>
